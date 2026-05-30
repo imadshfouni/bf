@@ -41,7 +41,7 @@ export const instructors: Instructor[] = [
     id: 'adam',
     name: 'Adam',
     role: 'Digital Marketing',
-    image: '/instructors/adam.png',
+    image: '/instructors/luke.png',
   },
   {
     id: 'daniel',
@@ -54,7 +54,7 @@ export const instructors: Instructor[] = [
     id: 'luke',
     name: 'Luke',
     role: 'AI Youth',
-    image: '/instructors/luke.png',
+    image: '/instructors/adam.png',
   },
   {
     id: 'carol',
@@ -63,24 +63,6 @@ export const instructors: Instructor[] = [
     image: '/instructors/carol.png',
   },
 ]
-
-const featuredIds = ['carol', 'sarah', 'adam', 'ryan'] as const
-
-/** Carol left · Sarah right */
-export const featuredInstructorsRow1: Instructor[] = [
-  instructors.find((i) => i.id === 'carol')!,
-  instructors.find((i) => i.id === 'sarah')!,
-]
-
-/** Adam left · Ryan right */
-export const featuredInstructorsRow2: Instructor[] = [
-  instructors.find((i) => i.id === 'adam')!,
-  instructors.find((i) => i.id === 'ryan')!,
-]
-
-export const otherInstructors = instructors.filter(
-  (i) => !featuredIds.includes(i.id as (typeof featuredIds)[number]),
-)
 
 export type LearningPath = {
   id: string
