@@ -25,14 +25,24 @@ export type Instructor = {
 
 /** AI mentors inside brAInify — names & roles match the live app */
 export const instructors: Instructor[] = [
-  { id: 'ryan', name: 'Ryan', role: 'AI' },
+  {
+    id: 'ryan',
+    name: 'Ryan',
+    role: 'AI',
+    image: '/instructors/ryan.png',
+  },
   {
     id: 'sarah',
     name: 'Sarah',
     role: 'Content Creator',
     image: '/instructors/sarah.png',
   },
-  { id: 'adam', name: 'Adam', role: 'Digital Marketing' },
+  {
+    id: 'adam',
+    name: 'Adam',
+    role: 'Digital Marketing',
+    image: '/instructors/adam.png',
+  },
   {
     id: 'daniel',
     name: 'Daniel',
@@ -54,14 +64,22 @@ export const instructors: Instructor[] = [
   },
 ]
 
-/** Featured pair — Carol left, Sarah right */
-export const featuredInstructors: Instructor[] = [
+const featuredIds = ['carol', 'sarah', 'adam', 'ryan'] as const
+
+/** Carol left · Sarah right */
+export const featuredInstructorsRow1: Instructor[] = [
   instructors.find((i) => i.id === 'carol')!,
   instructors.find((i) => i.id === 'sarah')!,
 ]
 
+/** Adam left · Ryan right */
+export const featuredInstructorsRow2: Instructor[] = [
+  instructors.find((i) => i.id === 'adam')!,
+  instructors.find((i) => i.id === 'ryan')!,
+]
+
 export const otherInstructors = instructors.filter(
-  (i) => i.id !== 'carol' && i.id !== 'sarah',
+  (i) => !featuredIds.includes(i.id as (typeof featuredIds)[number]),
 )
 
 export type LearningPath = {
