@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { navLinks } from '@/data/content'
 import { APP_URL } from '@/config/site'
 import { Button } from '@/components/ui/Button'
+import { Logo } from '@/components/ui/Logo'
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -34,13 +35,8 @@ export function Navbar() {
       transition={{ duration: 0.6 }}
     >
       <nav className="container-wide flex items-center justify-between px-5 py-4 sm:px-8 lg:px-12">
-        <a href="#" className="flex items-center gap-2">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-cyan-500 text-sm font-bold text-white">
-            bA
-          </span>
-          <span className="text-xl font-bold text-white">
-            br<span className="text-cyan-400">AI</span>nify
-          </span>
+        <a href="#" className="flex items-center">
+          <Logo size="md" />
         </a>
 
         <ul className="hidden items-center gap-8 lg:flex">

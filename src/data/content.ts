@@ -244,6 +244,14 @@ export const footerLinks = {
     { label: 'Application Lab', href: '#ecosystem' },
     { label: 'AI Tools', href: '#tools' },
     { label: 'Roadmap', href: '#roadmap' },
+    {
+      label: 'App Store',
+      href: 'https://apps.apple.com/lb/app/brainify-app/id6759913473',
+    },
+    {
+      label: 'Google Play',
+      href: 'https://play.google.com/store/apps/details?id=com.brainify.app',
+    },
   ],
   company: [
     { label: 'Log in', href: 'https://app.brainify.world' },

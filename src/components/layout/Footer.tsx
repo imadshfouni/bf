@@ -1,4 +1,6 @@
 import { footerLinks } from '@/data/content'
+import { Logo } from '@/components/ui/Logo'
+import { AppStoreBadges } from '@/components/ui/AppStoreBadges'
 
 export function Footer() {
   return (
@@ -6,15 +8,13 @@ export function Footer() {
       <div className="container-wide section-padding !py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <a href="#" className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-brand-600 to-cyan-500 text-sm font-bold text-white">
-                bA
-              </span>
-              <span className="text-xl font-bold text-white">
-                br<span className="text-brand-400">AI</span>nify
-              </span>
+            <a href="#" className="inline-flex">
+              <Logo size="md" />
             </a>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-500">
+            <div className="mt-6">
+              <AppStoreBadges />
+            </div>
+            <p className="mt-6 max-w-sm text-sm leading-relaxed text-slate-500">
               An AI-powered learning ecosystem where learning turns into
               real-world building. Part of the Ignite ecosystem.
             </p>
