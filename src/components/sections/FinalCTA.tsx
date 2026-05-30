@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
+import { LogIn } from 'lucide-react'
 import { AppStoreBadges } from '@/components/ui/AppStoreBadges'
 import { Button } from '@/components/ui/Button'
+import { APP_URL } from '@/config/site'
 
 export function FinalCTA() {
   return (
@@ -24,13 +26,16 @@ export function FinalCTA() {
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-slate-400">
               Join thousands learning, creating, and building with brAInify.
-              Download the app or start on web today.
+              Log in to continue your path or start fresh today.
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button href="#">Start Learning</Button>
-              <Button variant="secondary" href="#paths">
-                Explore Paths
+              <Button href={APP_URL}>
+                Start Learning
+              </Button>
+              <Button variant="login" href={APP_URL}>
+                <LogIn size={16} />
+                Log in
               </Button>
             </div>
 

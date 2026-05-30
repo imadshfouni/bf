@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
 
-type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'outline'
+type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'outline' | 'login'
 
 type ButtonProps = {
   variant?: ButtonVariant
@@ -9,6 +9,7 @@ type ButtonProps = {
   href?: string
   className?: string
   onClick?: () => void
+  external?: boolean
 }
 
 const variants: Record<ButtonVariant, string> = {
@@ -17,7 +18,9 @@ const variants: Record<ButtonVariant, string> = {
   secondary: 'border border-white/15 bg-white/5 text-white hover:bg-white/10',
   outline:
     'border border-cyan-500/30 bg-transparent text-cyan-300 hover:border-cyan-400/50 hover:bg-cyan-500/10',
-  ghost: 'text-slate-400 hover:text-white',
+  ghost: 'text-slate-400 hover:text-white hover:bg-white/5',
+  login:
+    'border border-white/20 bg-white/[0.06] text-white hover:border-cyan-400/40 hover:bg-white/10',
 }
 
 export function Button({
@@ -26,8 +29,12 @@ export function Button({
   className = '',
   href,
   onClick,
+  external = false,
 }: ButtonProps) {
   const classes = `inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 ${variants[variant]} ${className}`
+
+  const isExternal =
+    external || (href?.startsWith('http') && !href.startsWith('#'))
 
   if (href) {
     return (
@@ -36,6 +43,7 @@ export function Button({
         className={classes}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
+        {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       >
         {children}
       </motion.a>

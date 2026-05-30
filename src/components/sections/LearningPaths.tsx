@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react'
 import { learningPaths } from '@/data/content'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Button } from '@/components/ui/Button'
+import { APP_URL } from '@/config/site'
 
 export function LearningPaths() {
   const [activeId, setActiveId] = useState(learningPaths[0].id)
@@ -84,7 +85,7 @@ export function LearningPaths() {
                   ))}
                 </ul>
               </div>
-              <Button href="#cta" className="mt-8 w-fit">
+              <Button href={APP_URL} className="mt-8 w-fit">
                 Explore Path
                 <ArrowRight size={16} />
               </Button>

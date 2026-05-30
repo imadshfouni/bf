@@ -143,11 +143,41 @@ export const languages = [
 ] as const
 
 export const tools = [
-  { name: 'Claude', category: 'REASONING & WRITING', color: 'text-orange-400' },
-  { name: 'Descript', category: 'AUDIO & VIDEO', color: 'text-violet-400' },
-  { name: 'Perplexity', category: 'RESEARCH', color: 'text-cyan-400' },
-  { name: 'Relevance AI', category: 'AGENTS & OPS', color: 'text-blue-400' },
-  { name: 'n8n', category: 'WORKFLOW AUTOMATION', color: 'text-rose-400' },
+  {
+    name: 'Claude',
+    category: 'REASONING & WRITING',
+    color: 'text-[#f0a88c]',
+    logo: '/logos/claude.svg',
+    logoClass: 'h-9 w-9',
+  },
+  {
+    name: 'Descript',
+    category: 'AUDIO & VIDEO',
+    color: 'text-violet-400',
+    logo: '/logos/descript.svg',
+    logoClass: 'h-9 w-9 rounded-lg',
+  },
+  {
+    name: 'Perplexity',
+    category: 'RESEARCH',
+    color: 'text-cyan-400',
+    logo: '/logos/perplexity.svg',
+    logoClass: 'h-9 w-9',
+  },
+  {
+    name: 'Relevance AI',
+    category: 'AGENTS & OPS',
+    color: 'text-indigo-400',
+    logo: '/logos/relevance.svg',
+    logoClass: 'h-9 w-9 rounded-lg',
+  },
+  {
+    name: 'n8n',
+    category: 'WORKFLOW AUTOMATION',
+    color: 'text-rose-400',
+    logo: '/logos/n8n.svg',
+    logoClass: 'h-9 w-9',
+  },
 ] as const
 
 export const stats = [
@@ -216,7 +246,7 @@ export const footerLinks = {
     { label: 'Roadmap', href: '#roadmap' },
   ],
   company: [
-    { label: 'About', href: '#' },
+    { label: 'Log in', href: 'https://app.brainify.world' },
     { label: 'Ignite', href: 'https://joinignite.com/brainify/' },
     { label: 'Contact', href: 'mailto:support@brainify.world' },
   ],

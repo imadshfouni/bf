@@ -1,5 +1,6 @@
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import { Button } from '@/components/ui/Button'
+import { APP_URL } from '@/config/site'
 
 export function ProofOfSkill() {
   return (
@@ -17,7 +18,7 @@ export function ProofOfSkill() {
                 Show employers and clients what you can build — not just what you
                 watched.
               </p>
-              <Button href="#cta" className="mt-8">
+              <Button href={APP_URL} className="mt-8">
                 Start building your portfolio
               </Button>
             </div>

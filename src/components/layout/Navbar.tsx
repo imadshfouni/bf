@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { LogIn, Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { navLinks } from '@/data/content'
+import { APP_URL } from '@/config/site'
 import { Button } from '@/components/ui/Button'
 
 export function Navbar() {
@@ -55,8 +56,12 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden lg:block">
-          <Button href="#cta">Start Learning</Button>
+        <div className="hidden items-center gap-3 lg:flex">
+          <Button variant="login" href={APP_URL}>
+            <LogIn size={16} />
+            Log in
+          </Button>
+          <Button href={APP_URL}>Start Learning</Button>
         </div>
 
         <button
@@ -84,9 +89,15 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <Button href="#cta" className="mt-6 w-full">
-            Start Learning
-          </Button>
+          <div className="mt-6 flex flex-col gap-3">
+            <Button variant="login" href={APP_URL} className="w-full">
+              <LogIn size={16} />
+              Log in
+            </Button>
+            <Button href={APP_URL} className="w-full">
+              Start Learning
+            </Button>
+          </div>
         </div>
       )}
     </motion.header>

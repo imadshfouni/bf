@@ -16,11 +16,17 @@ export function ToolsSection() {
           {tools.map((tool, index) => (
             <ScrollReveal key={tool.name} delay={index * 0.08}>
               <article className="glass-panel group flex h-full flex-col items-center p-6 text-center transition-all duration-300 hover:border-cyan-500/25 hover:shadow-lg hover:shadow-blue-500/10">
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-white/5 text-xl font-bold text-white transition-transform group-hover:scale-110">
-                  {tool.name.charAt(0)}
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-white/[0.04] transition-transform group-hover:scale-105">
+                  <img
+                    src={tool.logo}
+                    alt={`${tool.name} logo`}
+                    className={tool.logoClass}
+                  />
                 </div>
                 <h3 className="font-semibold text-white">{tool.name}</h3>
-                <p className={`mt-2 text-[10px] font-semibold uppercase tracking-wider ${tool.color}`}>
+                <p
+                  className={`mt-2 text-[10px] font-semibold uppercase tracking-wider ${tool.color}`}
+                >
                   {tool.category}
                 </p>
               </article>
